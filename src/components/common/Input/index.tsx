@@ -35,11 +35,11 @@ const Input: React.FC<InputProps> = ({
       id={name}
       name={name}
       placeholder={placeholder}
-      className={clsx('input', { error })}
+      className={clsx('input', !error && 'mb-2', { error })}
       defaultValue={defaultValue}
       {...control}
     />
-    {error && <p className="error-message ">{error}</p>}
+    {error && <p className="error-message m-0 mt-1">{error}</p>}
   </div>
 );
 

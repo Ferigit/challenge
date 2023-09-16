@@ -1,0 +1,19 @@
+
+//responsive table 
+@media (max-width: 768px) {
+    .table-container {
+      overflow-x: scroll;
+    }
+  
+    .table {
+      white-space: nowrap;
+    }
+  
+    .table th,
+    .table td {
+      display: inline-block;
+      min-width: 100px;
+      box-sizing: border-box;
+    }
+    
+  }

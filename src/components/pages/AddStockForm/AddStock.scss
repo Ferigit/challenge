@@ -1,0 +1,53 @@
+// .add-stock-container {
+//     @media (max-width: 768px) {
+//         flex-direction: column;
+//     }
+//     .add-stock-form {
+//         .subscribe-button{
+//             @media (max-width: 768px) {
+//                 width: 100%;
+//             }    
+//         }
+//         @media (max-width: 768px) {
+//             flex-direction: column;
+//             row-gap: .5rem;
+//         }
+//     }
+// }
+/* AddStock.scss */
+
+.add-stock-container {
+    display: flex;
+    flex-direction: column; /* Default to column layout */
+    gap: 1rem; /* Adjust the gap between elements */
+    
+    @media (min-width: 769px) {
+      flex-direction: row; /* Switch to row layout on larger screens */
+      justify-content: space-between; /* Center elements horizontally */
+      align-items: center; /* Center elements vertically */
+    }
+  
+    h2 {
+      margin: 0; /* Remove default margin for heading */
+    }
+  
+    .add-stock-form {
+      display: flex;
+      flex-direction: column; /* Always use column layout for the form */
+      gap: 0.5rem; /* Adjust the gap between form elements */
+  
+      @media (min-width: 769px) {
+        flex-direction: row; /* Switch to row layout on larger screens */
+        align-items: center; /* Center elements vertically */
+      }
+  
+      .subscribe-button {
+        width: auto; /* Reset the width for the button */
+        
+        @media (max-width: 768px) {
+          width: 100%; /* Full width on small screens */
+        }
+      }
+    }
+  }
+  

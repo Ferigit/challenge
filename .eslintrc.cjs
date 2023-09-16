@@ -45,5 +45,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-else-return': 'off',
     'no-param-reassign': 'off',
+    'react/no-array-index-key': 'off',
+    'max-len': 'off',
+    'react/no-unstable-nested-components': 'off',
   },
 };
