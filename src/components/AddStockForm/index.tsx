@@ -17,15 +17,15 @@ const AddStock: React.FC = () => {
     setIsin('');
     setError('');
   };
-  return (
-    <form className="custom-form" onSubmit={handleAddStock}>
-      <Input
-        placeholder="Enter ISIN"
-        control={{ value: isin, onChange: (e) => setIsin(e.target.value) }}
-      />
-      <Button>Subscribe</Button>
-    </form>
-  );
+  // return (
+  //   <form className="custom-form" onSubmit={handleAddStock}>
+  //     <Input
+  //       placeholder="Enter ISIN"
+  //       control={{ value: isin, onChange: (e) => setIsin(e.target.value) }}
+  //     />
+  //     <Button>Subscribe</Button>
+  //   </form>
+  // );
   return (
     <div>
       <h2>Add Stock</h2>
