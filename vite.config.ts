@@ -11,6 +11,15 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Specify additional SCSS/Sass options here
+        // For example, you can include global variables or mixins
+        // Example: `additionalData: '@import "@/styles/variables.scss";'`
+      },
+    },
+  },
   test: {
     globals: true,
     environment: "jsdom",
