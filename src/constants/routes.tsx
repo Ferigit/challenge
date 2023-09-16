@@ -3,7 +3,7 @@ import componentLoader from "@/utils/componentLoader";
 
 const HomePage = lazy(() =>
   componentLoader(
-    () => import(/* webpackChunkName: "HomePage" */ "@/components/Home")
+    () => import(/* webpackChunkName: "HomePage" */ "@/pages/HomePage")
   )
 );
 
