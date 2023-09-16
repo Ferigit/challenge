@@ -43,5 +43,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'no-else-return': 'off',
+    'no-param-reassign': 'off',
   },
 };

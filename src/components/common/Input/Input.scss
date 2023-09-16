@@ -1,0 +1,38 @@
+// Input.scss
+.input-container {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    padding-left: 0.25rem;
+    display: block;
+    color: #424242;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 2px solid #9BA5B7;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+  
+    &:focus {
+      border-color: #1E90FF; // Example focus color
+    }
+  
+    &.error {
+      border-color: #FF0000; // Example error color
+    }
+  }
+  
+  .error-message {
+    color: #FF0000;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
