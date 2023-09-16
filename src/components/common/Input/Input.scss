@@ -14,19 +14,20 @@
   
   .input {
     display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
+    // width: 100%;
+    padding: .75rem 1rem;
     border: 2px solid #9BA5B7;
-    border-radius: 10px;
+    border-radius: .25rem;
     outline: none;
+    font-size: 1rem;
     transition: border-color 0.2s ease-in-out;
   
     &:focus {
-      border-color: #1E90FF; // Example focus color
+      border-color: #60a5fa; //1E90FF Example focus color
     }
   
     &.error {
-      border-color: #FF0000; // Example error color
+      border-color: #FF0000; 
     }
   }
   
@@ -34,5 +35,7 @@
     color: #FF0000;
     font-size: 0.875rem;
     margin-top: 0.25rem;
+    text-align: left;
+    padding-left: .25rem;
   }
   

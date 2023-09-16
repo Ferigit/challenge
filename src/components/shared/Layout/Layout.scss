@@ -1,0 +1,14 @@
+// .layout-container {
+// }
+
+.layout-container {
+    max-width: var(--max-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}

@@ -9,7 +9,7 @@ interface IProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 const Button: React.FC<IProps> = ({ children, className, onClick }: IProps) => (
-  <button onClick={onClick} className={clsx('custom-button', className)}>
+  <button onClick={onClick} className={clsx('button', className)}>
     {children}
   </button>
 );

@@ -39,7 +39,7 @@ const Input: React.FC<InputProps> = ({
       defaultValue={defaultValue}
       {...control}
     />
-    {error && <p className="error-message">{error.message}</p>}
+    {error && <p className="error-message ">{error}</p>}
   </div>
 );
 
