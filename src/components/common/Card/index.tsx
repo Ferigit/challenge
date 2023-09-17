@@ -3,7 +3,7 @@ import clsx from 'classnames';
 import './Card.scss';
 
 interface ShadowCardProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
