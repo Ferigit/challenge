@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'classnames';
-import './Input.scss'; // Import the SCSS file
+import './Input.scss';
 
 interface InputProps {
   label?: string;
@@ -23,7 +23,6 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   name,
   control,
-  defaultValue = '',
   error,
 }) => (
   <div className={clsx('input-container', className)}>
@@ -36,7 +35,6 @@ const Input: React.FC<InputProps> = ({
       name={name}
       placeholder={placeholder}
       className={clsx('input', !error && 'mb-2', { error })}
-      defaultValue={defaultValue}
       {...control}
     />
     {error && <p className="error-message m-0 mt-1">{error}</p>}
