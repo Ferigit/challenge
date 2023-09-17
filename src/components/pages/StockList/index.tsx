@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { webSocketService } from '@/hooks/WebSocketService';
+import React, { useEffect, useState, useMemo } from 'react';
+import { webSocketService } from '@/services/WebSocketService';
 import { Table, Button } from '@/components/common';
 import './StockList.scss';
 
@@ -43,14 +43,23 @@ const StockList: React.FC = () => {
 
   const tableHeaders = ['ISIN', 'Price', 'Bid', 'Ask', 'Action'];
 
-  const tableData = stocks.map(({
+  const tableData = useMemo(() => stocks.map(({
     isin, price, bid, ask,
   }: any) => [
     isin,
     parseFloat(price.toFixed(4)),
     parseFloat(bid.toFixed(4)),
     parseFloat(ask.toFixed(4)),
-  ]);
+  ]), [stocks]);
+
+  // const tableData1 = stocks.map(({
+  //   isin, price, bid, ask,
+  // }: any) => [
+  //   isin,
+  //   parseFloat(price.toFixed(4)),
+  //   parseFloat(bid.toFixed(4)),
+  //   parseFloat(ask.toFixed(4)),
+  // ]);
 
   return (
     <div>

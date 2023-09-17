@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { webSocketService } from '@/hooks/WebSocketService';
+import { webSocketService } from '@/services/WebSocketService';
 import { Input, Button } from '@/components/common';
 import validateISIN from '@/utils/validateISIN';
 import './AddStock.scss';
@@ -13,19 +13,20 @@ const AddStock: React.FC = () => {
     setError('');
     const validate = validateISIN(isin.trim());
 
+    // validate isin
     if (validate) {
       setError(validate);
       return;
     }
 
-    // if (webSocketService.isSubscribed(isin)) {
-    //   setError('You are already subscribed to this ISIN');
-    //   return;
-    // }
-
-    webSocketService.subscribeToStock(isin);
-    setIsin('');
-    setError('');
+    // check isin already subscribed or not
+    if (!webSocketService.isSubscribed(isin)) {
+      webSocketService.subscribeToStock(isin);
+      setIsin('');
+      setError('');
+    } else {
+      setError('You are already subscribed to this ISIN');
+    }
   };
 
   return (

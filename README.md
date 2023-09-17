@@ -189,9 +189,25 @@ You would then receive a WebSocket stream with messages in the following format
 1. What happens in case the WebSocket disconnects? How would you go further to keep
    the live data available or inform the user? Please discuss the challenges.
 
+   Answer:
+    1. Implement an automatic reconnection strategy to the WebSocket server.
+    2. Display a status indicator and error message in the UI.
+    3. Store the last known data locally when the WebSocket is connected, and if a disconnection happens, continue displaying the last known data. Once reconnected, the UI can be updated with fresh data.
+
 2. What happens if a user adds an instrument multiple times to their list? Please discuss possible challenges and mitigations.
 
+    Answer:
+     1. Implemented client-side validation to check whether an ISIN is already in the user's. I already added it to this project.
+
 3. What potential performance issues might you face when this app scales with multiple subscriptions? How would you improve the speed and user experience?
+
+    Answer:
+        1. maybe we can use web workers.
+
+        2.Optimize data transfer by minimizing unnecessary payload and compression.
+        
+        3. Use technical improvement ways like: 
+        lazyload, memoize, 
 
 ---
 

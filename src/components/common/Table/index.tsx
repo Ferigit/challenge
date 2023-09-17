@@ -4,7 +4,7 @@ import './Table.scss';
 interface DynamicTableProps {
   headers: string[];
   columns: (string | number)[][];
-  customActionCell?: React.ComponentType<{ onCustomActionClick: () => void }>; // Add this prop
+  customActionCell?: React.ComponentType<{ onCustomActionClick: () => void }>;
   onCustomActionClick?: (row: any) => void;
 }
 
@@ -51,8 +51,6 @@ const Table: React.FC<DynamicTableProps> = ({
       </tbody>
     </table>
   </div>
-)
-//   }
-;
+);
 
 export default Table;

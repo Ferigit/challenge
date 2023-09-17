@@ -7,6 +7,7 @@ const WS_URL = 'ws://localhost:8425/';
 
 class WebSocketService {
   private socket$: WebSocketSubject<any>;
+
   private subscriptions: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
   constructor() {
@@ -19,7 +20,14 @@ class WebSocketService {
       currentSubscriptions.push(isin);
       this.subscriptions.next(currentSubscriptions);
       this.socket$.next({ subscribe: isin });
+    } else {
+      console.log('already exist: ');
     }
+  }
+
+  isSubscribed(isin: string) {
+    const currentSubscriptions = this.subscriptions.value;
+    return currentSubscriptions.includes(isin);
   }
 
   unsubscribeFromStock(isin: string) {
