@@ -36,30 +36,24 @@ const StockList: React.FC = () => {
     };
   }, []);
 
-  const handleUnsubscribe = (isin: string) => {
+  const handleUnsubscribe = ([isin]: string) => {
     webSocketService.unsubscribeFromStock(isin);
     setStocks((prevStocks) => prevStocks.filter((s) => s.isin !== isin));
   };
 
   const tableHeaders = ['ISIN', 'Price', 'Bid', 'Ask', 'Action'];
 
-  const tableData = useMemo(() => stocks.map(({
-    isin, price, bid, ask,
-  }: any) => [
-    isin,
-    parseFloat(price.toFixed(4)),
-    parseFloat(bid.toFixed(4)),
-    parseFloat(ask.toFixed(4)),
-  ]), [stocks]);
-
-  // const tableData1 = stocks.map(({
-  //   isin, price, bid, ask,
-  // }: any) => [
-  //   isin,
-  //   parseFloat(price.toFixed(4)),
-  //   parseFloat(bid.toFixed(4)),
-  //   parseFloat(ask.toFixed(4)),
-  // ]);
+  const tableData = useMemo(
+    () => stocks.map(({
+      isin, price, bid, ask,
+    }: any) => [
+      isin,
+      parseFloat(price.toFixed(4)),
+      parseFloat(bid.toFixed(4)),
+      parseFloat(ask.toFixed(4)),
+    ]),
+    [stocks],
+  );
 
   return (
     <div>
@@ -68,12 +62,7 @@ const StockList: React.FC = () => {
         headers={tableHeaders}
         columns={tableData}
         customActionCell={() => (
-          <Button
-            onClick={(stock: any) => handleUnsubscribe(stock.isin)}
-            className="unsubscribe-button "
-          >
-            Unsubscribe
-          </Button>
+          <Button className="unsubscribe-button ">Unsubscribe</Button>
         )}
         onCustomActionClick={handleUnsubscribe}
       />

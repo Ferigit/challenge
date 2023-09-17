@@ -34,7 +34,7 @@ const AddStock: React.FC = () => {
       className="add-stock-container flex items-start justify-between"
       onSubmit={handleAddStock}
     >
-      <h2 className="m-0">Stock </h2>
+      <h2 className="m-0">Stock Management</h2>
       <div className=" flex add-stock-form justify-start items-center gap-x-1 items-start">
         <Input
           placeholder="Enter ISIN"
