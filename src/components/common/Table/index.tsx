@@ -27,17 +27,19 @@ const Table: React.FC<DynamicTableProps> = ({
             ))}
           </tr>
         </thead>
-        <tbody className="">
+        <tbody className="tbody">
           {columns.length ? (
             columns.map((row, rowIndex) => (
-              <tr key={rowIndex} className="table-row">
+              <tr key={rowIndex} className="table-row mt-1">
                 {row.map((column, colIndex) => (
                   <td key={colIndex}>{column}</td>
                 ))}
                 {CustomActionCell && (
-                  <CustomActionCell
-                    onCustomActionClick={() => onCustomActionClick && onCustomActionClick(row)}
-                  />
+                  <td>
+                    <CustomActionCell
+                      onCustomActionClick={() => onCustomActionClick && onCustomActionClick(row)}
+                    />
+                  </td>
                 )}
               </tr>
             ))

@@ -44,7 +44,7 @@ describe('Input component', () => {
   });
 
   it('displays an error message when error prop is provided', () => {
-    const error = { message: 'Input is invalid' };
+    const error = 'Input is invalid';
 
     render(
       <Input

@@ -8,12 +8,14 @@
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-  }
-
-  .thead{
-    background-color: rgb(236,248,255);
+    border: 1px solid rgb(236,248,255);
     border-radius: 1rem;
   }
+
+  // .thead{
+  //   background-color: rgb(236,248,255);
+  //   border-radius: 1rem;
+  // }
 
   .table th,
   .table td {
@@ -28,10 +30,14 @@
     margin-top: .5rem;
     margin-bottom: .5rem;
   }
-  
- 
-  .table-row {
-    margin-bottom: 10px; /* Adjust the margin as needed */
-  white-space: nowrap; /* Prevent line breaks in rows */
-  overflow-x: auto; 
+
+  .table .tbody tr{
+    margin-top: .5rem;
+    padding-top: 10px;
+    height: 50px;
   }
+ 
+  .table .table-row {
+    margin-bottom: 10px;
+  }
+ 

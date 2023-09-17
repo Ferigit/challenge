@@ -1,31 +1,32 @@
-// Input.scss
+
 .input-container {
-    // margin-bottom: 1rem;
-    // display: flex;
-    // flex-direction: column;
-    
+  
+  @media (max-width: 769px) {
+    width: 100%;
+  }
   }
   
   .label {
     padding-left: 0.25rem;
     display: block;
     color: #424242;
-    // margin-bottom: 0.5rem;
   }
   
   .input {
     display: block;
     width: 200px;
-    padding: .75rem 1rem;
+    padding: .65rem 1rem;
     border: 2px solid #9BA5B7;
     border-radius: .25rem;
     outline: none;
     font-size: 1rem;
     transition: border-color 0.2s ease-in-out;
     margin: 0;
-  
+    @media (max-width: 769px) {
+      width: -webkit-fill-available;
+    }
     &:focus {
-      border-color: #60a5fa; //1E90FF Example focus color
+      border-color: #60a5fa; 
     }
   
     &.error {
@@ -36,8 +37,11 @@
   .error-message {
     color: #FF0000;
     font-size: 0.875rem;
-    // margin-top: 0.25rem;
     text-align: left;
     padding-left: .25rem;
+    max-width: 220px;
+    @media (max-width: 769px) {
+      max-width: -webkit-fill-available;
+    }
   }
   

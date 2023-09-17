@@ -52,9 +52,6 @@ const StockList: React.FC = () => {
     parseFloat(ask.toFixed(4)),
   ]);
 
-  // const CustomActionCell = () =>
-  // <Button onClick={() => handleUnsubscribe(stock.isin)}>Unsubscribe</Button>;
-  console.log('tableData: ', stocks, tableData);
   return (
     <div>
       <h2>Subscribed Stocks</h2>
@@ -62,29 +59,15 @@ const StockList: React.FC = () => {
         headers={tableHeaders}
         columns={tableData}
         customActionCell={() => (
-          <Button onClick={(stock: any) => handleUnsubscribe(stock.isin)} className="unsubscribe-button ">
+          <Button
+            onClick={(stock: any) => handleUnsubscribe(stock.isin)}
+            className="unsubscribe-button "
+          >
             Unsubscribe
           </Button>
         )}
         onCustomActionClick={handleUnsubscribe}
       />
-
-      {/* <ul>
-        {stocks.map((stock) => (
-          <li key={stock.isin}>
-            <div className="stock-info">
-              <h3>{stock.isin}</h3>
-              <p>
-                Price: ${stock.price.toFixed(2)} | Bid: ${stock.bid.toFixed(2)}{' '}
-                | Ask: ${stock.ask.toFixed(2)}
-              </p>
-            </div>
-            <button onClick={() => handleUnsubscribe(stock.isin)}>
-              Unsubscribe
-            </button>
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 };

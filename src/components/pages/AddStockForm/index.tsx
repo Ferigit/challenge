@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { webSocketService } from '@/hooks/WebSocketService';
 import { Input, Button } from '@/components/common';
+import validateISIN from '@/utils/validateISIN';
 import './AddStock.scss';
 
 const AddStock: React.FC = () => {
@@ -9,8 +10,11 @@ const AddStock: React.FC = () => {
 
   const handleAddStock = (e: any) => {
     e.preventDefault();
-    if (!isin || isin.trim() === '') {
-      setError('ISIN cannot be empty');
+    setError('');
+    const validate = validateISIN(isin.trim());
+
+    if (validate) {
+      setError(validate);
       return;
     }
 
@@ -23,10 +27,13 @@ const AddStock: React.FC = () => {
     setIsin('');
     setError('');
   };
-  console.log('error: ', error);
+
   return (
-    <form className="add-stock-container flex items-start justify-between" onSubmit={handleAddStock}>
-      <h2 className="m-0">Stock</h2>
+    <form
+      className="add-stock-container flex items-start justify-between"
+      onSubmit={handleAddStock}
+    >
+      <h2 className="m-0">Stock </h2>
       <div className=" flex add-stock-form justify-start items-center gap-x-1 items-start">
         <Input
           placeholder="Enter ISIN"
