@@ -4,7 +4,7 @@ import './Table.scss';
 interface DynamicTableProps {
   headers: string[];
   columns: (string | number)[][];
-  customActionCell?: React.ComponentType<{ onCustomActionClick: () => void }>;
+  customActionCell:any;
   onCustomActionClick?: (row: any) => void;
 }
 
@@ -31,10 +31,8 @@ const Table: React.FC<DynamicTableProps> = ({
                 <td key={colIndex + +column}>{column}</td>
               ))}
               {CustomActionCell && (
-                <td>
-                  <CustomActionCell
-                    onCustomActionClick={() => onCustomActionClick && onCustomActionClick(row)}
-                  />
+                <td onClick={() => onCustomActionClick && onCustomActionClick(row)}>
+                  <CustomActionCell />
                 </td>
               )}
             </tr>
