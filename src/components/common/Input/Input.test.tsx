@@ -1,9 +1,6 @@
-// import { render, screen } from 'vitest';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Input from './index';
-// import { render, screen } from 'vitest';
-// import Input from './Input';
 
 describe('Input component', () => {
   it('renders correctly', () => {

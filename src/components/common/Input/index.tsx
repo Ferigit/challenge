@@ -6,15 +6,15 @@ interface InputProps {
   label?: string;
   name?: string;
   placeholder?: string;
-  control: {
+  control?: {
     onChange?: (value: any) => void;
     onBlur?: () => void;
     value?: any;
     type?: string;
   };
-  defaultValue?: string;
   error?: any;
   className?: string;
+  disabled?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -24,6 +24,7 @@ const Input: React.FC<InputProps> = ({
   name,
   control,
   error,
+  disabled,
 }) => (
   <div className={clsx('input-container', className)}>
     <label htmlFor={name} className="label">
@@ -35,6 +36,7 @@ const Input: React.FC<InputProps> = ({
       name={name}
       placeholder={placeholder}
       className={clsx('input', !error && 'mb-2', { error })}
+      disabled={disabled}
       {...control}
     />
     {error && <p className="error-message m-0 mt-1">{error}</p>}

@@ -2,13 +2,16 @@ import React from 'react';
 import './Button.scss';
 import clsx from 'classnames';
 
-interface IProps {
-  children: React.ReactNode;
+export interface IProps {
+  children?: React.ReactNode;
   className?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  size?: 'small' | 'primary' | 'large'
 }
-const Button: React.FC<IProps> = ({ children, className, onClick }: IProps) => (
-  <button onClick={onClick} className={clsx('button', className)}>
+const Button: React.FC<IProps> = ({
+  children, size = 'primary', className, onClick,
+}: IProps) => (
+  <button onClick={onClick} className={clsx('button', className, size)}>
     {children}
   </button>
 );
