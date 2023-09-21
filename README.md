@@ -1,4 +1,10 @@
 # Frontend Coding Challenge
+setup the project:
+
+1. npm install 
+2. npm run dev 
+
+
 
 Hello there, thanks again for your interest in Trade Republic. To kick off the
 interview process we have prepared a short coding exercise for you, to demonstrate your knowledge of the language and tools we use to develop our web applications.
