@@ -1,4 +1,10 @@
 # Frontend Coding Challenge
+setup the project:
+
+1. npm install 
+2. npm run dev 
+
+
 
 Hello there, thanks again for your interest in Trade Republic. To kick off the
 interview process we have prepared a short coding exercise for you, to demonstrate your knowledge of the language and tools we use to develop our web applications.
@@ -66,15 +72,12 @@ Please make sure to have [Node](https://nodejs.org) 16 installed.
 
 ### Running the code
 
-Once you have unzipped the folder and are ready to start, you can run `yarn` (or `npm install`) to install dependencies. After that, you can run:
+Once you have unzipped the folder and are ready to start, you can run `npm install` to install dependencies. After that, you can run:
 
 ```bash
 # npm
 npm run dev
 
-# or yarn
-yarn dev
-```
 
 This will start the application in development mode. It will also start the WebSocket server on port 8425. 
 
